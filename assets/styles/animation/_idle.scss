@@ -1,0 +1,43 @@
+@use '../abstract/' as *;
+
+
+.idle{
+
+    &__titre{
+        translate: 0;
+        opacity: 1;
+        transition: 
+                transform 1s ease-in-out 0.2s,
+                opacity 0.6s ease-in-out 0.3s;
+
+
+        &--hide{
+            @extend %hide--intro;
+        }
+    }
+
+    &__texte{
+        translate: 0;
+        transition: 
+                transform 1s ease-in-out 0.2s,
+                opacity 0.6s ease-in-out 0.5s;
+
+
+        &--hide{
+            @extend %hide--intro;
+        }
+    }
+
+
+    &__bouton{
+        translate: 0;
+        transition: 
+                transform 1s ease-in-out 0.4s,
+                opacity 0.6s ease-in-out 0.7s;
+
+
+        &--hide{
+            @extend %hide--intro;
+        }
+    }
+}

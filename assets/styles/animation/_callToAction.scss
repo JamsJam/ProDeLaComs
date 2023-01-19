@@ -1,0 +1,54 @@
+@use "../abstract" as *;
+
+.ctaShow{
+    &__titre{
+        translate: 0;
+        opacity: 1;
+        transition: 
+                transform 1s ease-in-out 0.2s,
+                opacity 0.6s ease-in-out 0.3s;
+
+
+        &--hide{
+            @extend %hide--intro;
+        }
+    }
+
+    &__texte{
+        translate: 0;
+        transition: 
+                transform 1s ease-in-out 0.2s,
+                opacity 0.6s ease-in-out 0.5s;
+
+
+        &--hide{
+            @extend %hide--intro;
+        }
+    }
+
+
+    &__bouton{
+        translate: 0;
+        transition: 
+                transform 1s ease-in-out 0.4s,
+                opacity 0.6s ease-in-out 0.7s;
+
+
+        &--hide{
+            @extend %hide--intro;
+        }
+    }
+
+
+    &__image{
+        transform: rotate3d(0) ;
+        transition: 
+                transform  1s cubic-bezier(.4,-0.45,.93,.81) 0.4s,
+                opacity 0.6s ease-in-out 0.7s;
+
+
+        &--hide{
+            @extend %hide__img__droite--rotate;
+        }
+    }
+}

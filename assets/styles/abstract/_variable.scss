@@ -1,0 +1,139 @@
+
+
+// :root{
+
+//* =====================
+//?         Color
+//* =====================
+
+    //!primary
+
+        $primary-95: hsl(255,82%,95%) ;
+        $primary-85: hsl(255,82%,85%) ;
+        $primary-75: hsl(255,82%,75%) ;
+        $primary-75: hsl(255,82%,75%) ;
+        $primary-65: hsl(255,82%,65%) ;
+        $primary-55: hsl(255,82%,55%) ;
+        $primary-45: hsl(255,82%,45%) ;
+        $primary-35: hsl(255,82%,35%) ;
+        $primary-25: hsl(255,82%,25%) ;
+        $primary-15: hsl(255,82%,15%) ;
+        $primary-5: hsl(255,82%,5%) ;
+
+    // body{
+    //     background-color:    $primary-15;
+    // }
+    //!secondary
+
+        $secondary-95: hsl(288, 66%,95%) ;
+        $secondary-85: hsl(288, 66%,85%) ;
+        $secondary-75: hsl(288, 66%,75%) ;
+        $secondary-75: hsl(288, 66%,75%) ;
+        $secondary-65: hsl(288, 66%,65%) ;
+        $secondary-55: hsl(288, 66%,55%) ;
+        $secondary-45: hsl(288, 66%,45%) ;
+        $secondary-35: hsl(288, 66%,35%) ;
+        $secondary-25: hsl(288, 66%,25%) ;
+        $secondary-15: hsl(288, 66%,15%) ;
+        $secondary-5: hsl(288, 66%,5%) ;
+    
+    //!neutral
+    
+        $neutral-95: hsl(0,0%,95%) ;
+        $neutral-85: hsl(0,0%,85%) ;
+        $neutral-75: hsl(0,0%,75%) ;
+        $neutral-75: hsl(0,0%,75%) ;
+        $neutral-65: hsl(0,0%,65%) ;
+        $neutral-55: hsl(0,0%,55%) ;
+        $neutral-45: hsl(0,0%,45%) ;
+        $neutral-35: hsl(0,0%,35%) ;
+        $neutral-25: hsl(0,0%,25%) ;
+        $neutral-15: hsl(0,0%,15%) ;
+        $neutral-5: hsl(0,0%,5%) ;
+    
+    //!success
+
+        $success-95: hsl(131,41%,95%) ;
+        $success-85: hsl(131,41%,85%) ;
+        $success-75: hsl(131,41%,75%) ;
+        $success-75: hsl(131,41%,75%) ;
+        $success-65: hsl(131,41%,65%) ;
+        $success-55: hsl(131,41%,55%) ;
+        $success-45: hsl(131,41%,45%) ;
+        $success-35: hsl(131,41%,35%) ;
+        $success-25: hsl(131,41%,25%) ;
+        $success-15: hsl(131,41%,15%) ;
+        $success-5: hsl(131,41%,5%) ;
+    
+    //!danger
+
+        $danger-95: hsl(11,89%,95%) ;
+        $danger-85: hsl(11,89%,85%) ;
+        $danger-75: hsl(11,89%,75%) ;
+        $danger-75: hsl(11,89%,75%) ;
+        $danger-65: hsl(11,89%,65%) ;
+        $danger-55: hsl(11,89%,55%) ;
+        $danger-45: hsl(11,89%,45%) ;
+        $danger-35: hsl(11,89%,35%) ;
+        $danger-25: hsl(11,89%,25%) ;
+        $danger-15: hsl(11,89%,15%) ;
+        $danger-5: hsl(11,89%,5%) ;
+
+    //! Warning
+        $warning-95: hsl(39,100%,95%) ;
+        $warning-85: hsl(39,100%,85%) ;
+        $warning-75: hsl(39,100%,75%) ;
+        $warning-75: hsl(39,100%,75%) ;
+        $warning-65: hsl(39,100%,65%) ;
+        $warning-55: hsl(39,100%,55%) ;
+        $warning-45: hsl(39,100%,45%) ;
+        $warning-35: hsl(39,100%,35%) ;
+        $warning-25: hsl(39,100%,25%) ;
+        $warning-15: hsl(39,100%,15%) ;
+        $warning-5: hsl(39,100%,5%) ;
+
+        $info-95: hsl(190,96%,95%) ;
+        $info-85: hsl(190,96%,85%) ;
+        $info-75: hsl(190,96%,75%) ;
+        $info-75: hsl(190,96%,75%) ;
+        $info-65: hsl(190,96%,65%) ;
+        $info-55: hsl(190,96%,55%) ;
+        $info-45: hsl(190,96%,45%) ;
+        $info-35: hsl(190,96%,35%) ;
+        $info-25: hsl(190,96%,25%) ;
+        $info-15: hsl(190,96%,15%) ;
+        $info-05: hsl(190,96%,5%) ;
+
+
+
+//* =====================
+//?         Font
+//* =====================
+
+    //! Familly
+        
+        $font-title : Merienda,serif ;
+        $font-texte: Confortaa,sans-serif ;
+    
+    //! Size-title
+    
+        $title-size-1 : clamp(2rem, 1.4737rem + 2.807vw, 4rem);;
+        $title-size-2 : clamp(2.5rem, 2.4rem + 0.5333vw, 3rem);
+        $title-size-3 : clamp(1.5rem, 1.1795rem + 1.7094vw, 2rem);
+        $title-size-4 : clamp(1.25rem, 0.5rem + 1.5625vw, 1.5rem);;
+    
+    //! Size-texte
+    
+        $text-size-1 : clamp(1.2rem, 1.1211rem + 0.4211vw, 1.5rem);;
+        $text-size-2 : 1.25rem;
+        $text-size-3 : 1rem;
+        $text-size-4 : 0.875rem;
+    
+
+//* =====================
+//?        Shadow
+//* =====================
+
+    $shadow : 3px 4px 7px -2px hsl(0,0%,0%,0.2);
+    $shadow-hover : 0px 4px 4px 0px  hsl(0,0%,0%,0.3);
+// }

@@ -1,0 +1,27 @@
+@use '../abstract/' as *;
+
+.texte{
+    // font-family: $font-texte;
+    line-height: 1.618em;
+    font-weight: 500;
+    
+        &--24{
+            font-size: $text-size-1;
+            letter-spacing: 0.07em;
+        }
+    
+        &--20{
+            font-size: $text-size-2;
+            letter-spacing: 0.07em;
+        }
+    
+        &--16{
+            font-size: $text-size-3;
+            letter-spacing: 0.07em;
+        }
+    
+        &--14{
+            font-size: $text-size-4 ;
+            letter-spacing: 0.07em;
+        }
+}

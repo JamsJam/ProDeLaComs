@@ -1,0 +1,21 @@
+@use '../abstract/' as *;
+
+
+
+.login{
+    width: clamp(3.125rem, -3.25rem + 13.2813vw, 5.25rem);
+    height: clamp(2.98rem, -3.08rem + 12.625vw, 5rem);
+    fill:$primary-85;
+    fill-rule:evenodd;
+    clip-rule:evenodd;
+    stroke-linejoin:round;
+    stroke-miterlimit:2;
+
+}
+
+.naviContext{
+    .login{
+        fill: $primary-25
+    }
+}
+

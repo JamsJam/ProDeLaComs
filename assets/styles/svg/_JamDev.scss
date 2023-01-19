@@ -1,0 +1,54 @@
+@use '../abstract/' as *;
+
+.header-logo,
+.footer__logo{
+
+    .logo-JamDev{
+        width:clamp(5.25rem, -6rem + 23.4375vw, 9rem);
+        height:clamp(5.25rem, -6rem + 23.4375vw, 9rem);
+    }
+    .JamDev{
+        
+        fill-rule:evenodd;
+        fill: $primary-85;
+        clip-rule:evenodd;
+        
+        
+            stroke: $primary-35;
+        stroke-linejoin:round;
+        stroke-miterlimit:2;
+        
+
+        &--J,&--am,&--D,&--ev{
+            fill: $primary-25;
+            fill-rule:nonzero;
+        }
+
+    }
+}
+
+.naviContext{
+
+    .logo-JamDev{
+        width:clamp(5.25rem, -6rem + 23.4375vw, 9rem);
+        height:clamp(5.25rem, -6rem + 23.4375vw, 9rem);
+    }
+    .JamDev{
+        
+        fill-rule:evenodd;
+        fill: transparent;
+        clip-rule:evenodd;
+        
+        
+        stroke: $primary-35;
+        stroke-linejoin:round;
+        stroke-miterlimit:2;
+        
+
+        &--J,&--am,&--D,&--ev{
+            fill: $primary-25;
+            fill-rule:nonzero;
+        }
+
+    }
+}

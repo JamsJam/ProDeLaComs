@@ -1,0 +1,21 @@
+@use "../abstract" as *;
+
+.dashboard{
+
+    min-height: 65vh;
+    h1{
+        color:$primary-15;
+    }
+    
+    &__boutons{
+        @extend %flex-row-around-center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-block: 2rem;
+        padding-inline: 1rem;
+
+        a{
+            text-align: center;
+        }
+    }
+}

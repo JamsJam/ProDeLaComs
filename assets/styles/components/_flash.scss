@@ -1,0 +1,38 @@
+@use '../abstract/' as *;
+
+.flash{
+    @extend %flex-center;
+    width: clamp(300px,90vw,600px);
+    height: clamp(60px,30vw,80px);
+    border-radius: 10px;
+    padding-inline: 1rem;
+    text-align: center;
+    margin-block: 0.5rem ;
+
+    li{
+
+        list-style: none;
+    }
+
+    &--success{
+        color: $success-45 ;
+        background-color: $success-85 ;
+        border: $success-55 solid 3px;
+    }
+
+    &--danger {
+        color: $danger-35 ;
+        background-color: $danger-85 ;
+        border: $danger-55 solid 3px;
+    }
+    &--warning {
+        color: $warning-35 ;
+        background-color: $warning-75 ;
+        border: $warning-35 solid 3px;
+    }
+    &--info {
+        color: $info-25 ;
+        background-color: $info-85 ;
+        border: $info-55 solid 3px;
+    }
+}

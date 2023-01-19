@@ -1,0 +1,126 @@
+@use '_variable.scss' as *;
+
+//* =====================
+//?         flex
+//* =====================
+
+
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//! Flex-row
+
+
+    %flex-row-center{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+    %flex-row-evenly-center{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    %flex-row-evenly-start{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: start;
+    }
+
+    %flex-row-between-center{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    %flex-row-around-center{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+//! Flex-column
+
+    %flex-column-center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    %flex-column-evenly-center{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    %flex-column-between-center{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    %flex-column-between-start{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    %flex-column-around-center{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    %flex-column-around-stretch{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items:stretch;
+    }
+
+
+
+
+
+//* =====================
+//?        hide
+//* =====================
+
+    %hide--intro{
+        transform: translateY(100px);
+        opacity: 0!important;
+    }
+    %hide__img__droite{
+        transform: translateX(600px);
+        opacity: 0!important;
+    }
+    %hide__img__gauche{
+        transform: translateY(100px);
+        opacity: 0!important;
+    }
+    %hide__img__droite--rotate{
+        transform: rotate3d(0, 1, 0, 90deg);   
+        opacity: 0!important;
+    }
+    %hide__img__gauche--rotate{
+        transform: rotate3d(0, 1, 0, -90deg);   
+        opacity: 0!important;
+    }
+

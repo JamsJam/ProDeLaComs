@@ -1,0 +1,33 @@
+@use '../abstract/' as *;
+
+// todo farie animation au clic : burger => cross
+// style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+
+.burger{
+    width: 45px;
+    height: 60px;
+    fill:$primary-85;
+    transform: rotateZ(0deg);
+    transition: all 0.5s ease;
+    
+
+    & path{
+        transition: all 0.5s ease;
+    }
+
+    &--cross{
+        
+
+        transform: rotateZ(180deg);
+
+        .burger__path1{
+            d:path("M46.694,43.158C47.669,42.182 47.669,40.598 46.694,39.623L7.803,0.732C6.827,-0.244 5.243,-0.244 4.267,0.732L0.732,4.267C-0.244,5.243 -0.244,6.827 0.732,7.803L39.623,46.694C40.598,47.669 42.182,47.669 43.158,46.694L46.694,43.158Z")
+        }
+        .burger__path2{
+            fill-opacity: 0;
+        }
+        .burger__path3{
+            d:path("M43.469,0.749C42.493,-0.227 40.909,-0.227 39.933,0.749L1.042,39.64C0.066,40.615 0.066,42.2 1.042,43.175L4.578,46.711C5.553,47.686 7.138,47.686 8.113,46.711L47.004,7.82C47.98,6.844 47.98,5.26 47.004,4.284L43.469,0.749Z")
+        }
+    }
+}

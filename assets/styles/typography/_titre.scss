@@ -1,0 +1,30 @@
+@use '../abstract/' as *;
+
+.titre{
+    font-family: $font-title;
+    line-height: 1.618em;
+    font-weight: 500;
+    
+        &--64{
+            font-size: $title-size-1;
+            letter-spacing: 0.03em;
+            text-align: center;
+            margin-block : 1em;
+            padding-inline: 1rem;
+        }
+    
+        &--48{
+            font-size: $title-size-2;
+            letter-spacing: 0.03em;
+        }
+    
+        &--32{
+            font-size: $title-size-3;
+            letter-spacing: 0.03em;
+        }
+    
+        &--24{
+            font-size: $title-size-4 ;
+            letter-spacing: 0.07em;
+        }
+}

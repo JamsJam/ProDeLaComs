@@ -1,0 +1,69 @@
+@use '../abstract/' as *;
+
+
+.bouton{
+    @extend %flex-center;
+    font-size: clamp($text-size-2, 1.1842rem + 0.3509vw , $title-size-4);
+    padding: clamp(0.625rem, 0.4934rem + 0.7018vw, 1.125rem) clamp(1.5625rem, 1.3651rem + 1.0526vw, 2.3125rem);
+    font-family: $font-title;
+    border:none;
+
+
+    &--primary{
+        background-color: $primary-25;
+        color : white;
+        &:hover{
+            background-color: $primary-15;
+        }
+    }
+
+    &--secondary{
+        background-color: $neutral-95;
+        color : $secondary-25;
+        border: $secondary-35 3px solid;
+        &:hover{
+            background-color: $neutral-85;
+            // color : $secondary-85;
+        }
+    }
+
+    &--success{
+        background-color: $success-55;
+        color : $success-95;
+        &:hover{
+            background-color: $success-45;
+        }
+    }
+    &--warning{
+        background-color: $warning-55;
+        color : $warning-95;
+        &:hover{
+            background-color: $warning-45;
+        }
+    }
+
+    &--danger{
+        background-color: $danger-55;
+        color : $danger-95;
+        &:hover{
+            background-color: $danger-45;
+        }
+    }
+
+    &--info{
+        background-color: $info-55;
+        color : $info-95;
+        &:hover{
+            background-color: $info-45;
+        }
+    }
+
+    &--github{
+        color: $neutral-95;
+        background-color: $neutral-15;
+        &:hover{
+            background-color: $neutral-5;
+        }
+    }
+
+}

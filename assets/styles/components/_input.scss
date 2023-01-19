@@ -1,0 +1,50 @@
+@use '../abstract/' as *;
+
+.input{
+    &__text{
+        background-color: $neutral-95;
+        height: 3rem;
+        @extend %flex-center;
+        padding-inline: 0.5rem;
+        border: none;
+
+        transition: box-shadow ease-in-out 0.3s ;
+
+        &::placeholder{
+            color:$neutral-55;
+        }
+        &:focus-visible{
+            box-shadow: $shadow-hover;
+            outline: none;
+        }
+    }
+    &__textarea{
+        background-color: $neutral-95;
+        min-height: 7rem;
+        padding: 1rem;
+        border: none;
+        transition: box-shadow ease-in-out 0.3s ;
+
+        &::placeholder{
+            color:$neutral-55;
+        }
+        &:focus-visible{
+            box-shadow: $shadow-hover;
+            outline: none;
+        }
+    }
+
+
+    &--empty{
+        border-bottom: 4px solid $primary-35;
+    }
+    &--warning{
+        border-bottom: 4px solid $warning-55;
+    }
+    &--success{
+        border-bottom: 4px solid $success-45;
+    }
+    &--danger{
+        border-bottom: 4px solid $danger-45;
+    }
+}

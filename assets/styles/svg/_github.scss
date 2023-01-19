@@ -1,0 +1,20 @@
+@use '../abstract/' as *;
+
+.github{
+    // fill:"none";
+    width: clamp(3.125rem, -3.25rem + 13.2813vw, 5.25rem);
+    height: clamp(3.125rem, -3.25rem + 13.2813vw, 5.25rem);;
+
+    &__path{
+        fill-rule:evenodd;
+        clip-rule:evenodd;
+        transform:scale(64);
+        fill:$primary-85;
+    }
+}
+
+.naviContext{
+    .github__path{
+        fill:$primary-25;
+    }
+}

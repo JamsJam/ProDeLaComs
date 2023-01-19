@@ -1,0 +1,21 @@
+@use '../abstract/' as *;
+
+//todo set path stp logout logo
+
+// <svg width="84.5px" height="80px" viewBox="0 0 469 473" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+//     <g id="Logout-icn">
+//         <path d="M468.776,82.677L468.776,472.441L173.5,472.441L173.5,82.677C173.5,60.75 182.211,39.721 197.716,24.216C213.221,8.711 234.25,-0 256.177,0L386.098,0C408.026,-0 429.055,8.711 444.56,24.216C460.065,39.721 468.776,60.75 468.776,82.677Z" style="fill:rgb(35,31,32);"/>
+//         <path d="M249.5,289.25L249.5,207.75L115.021,207.75L115.021,167L0.5,248.5L115.021,330L115.021,289.25L249.5,289.25Z" style="fill:white;stroke:rgb(35,31,32);stroke-width:1px;"/>
+//     </g>
+// </svg>
+
+.logout{
+    width: clamp(3.125rem, -3.25rem + 13.2813vw, 5.25rem);
+    height: clamp(2.98rem, -3.08rem + 12.625vw, 5rem);
+}
+
+.naviContext{
+    .logout{
+        fill: $primary-25
+    }
+}
