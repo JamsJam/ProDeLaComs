@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SSHPASS: ${{ secret.APP_SECRET }}
+      SSHPASS: ${{ secrets.APP_SECRET }}
 
     steps:
       - uses: actions/checkout@v2
@@ -19,7 +19,7 @@ jobs:
       
       - name: test pwd
         run:
-          sshpass -e ssh -o stricthostkeychecking=no ${{ secret.APP_USER }}@${{ secret.APP_PASS }}
+          sshpass -e ssh -o stricthostkeychecking=no ${{ secrets.APP_USER }}@${{ secrets.APP_PASS }}
           "cd web/les-pros-de-la-com.jamdev.tech/public_html/ &&
           git pull &&
           /usr/bin/php8.1 /usr/local/bin/composer install &&
