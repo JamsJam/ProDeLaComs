@@ -21,5 +21,5 @@ jobs:
         sshpass -e ssh -o stricthostkeychecking=no ${{ secret.APP_USER }}@${{ secret.APP_PASS }}
         "cd web/les-pros-de-la-com.jamdev.tech/public_html/ &&
         git pull &&
-        composer install &&
-        php bin/console d:m:m -n"
+        /usr/bin/php8.1 /usr/local/bin/composer install &&
+        php8.1 bin/console d:m:m -n"
