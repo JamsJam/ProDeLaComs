@@ -10,7 +10,7 @@ jobs:
     env:
       SSHPASS: ${{ secret.APP_PASS }}
 
-    step:
+    steps:
       - uses: actions/checkout@v2
 
       - name: APT UPDATE and INSTALL SSHPASS
