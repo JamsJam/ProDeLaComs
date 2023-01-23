@@ -5,7 +5,7 @@ on:
 
 jobs:
   deploy:
-    run-on: ubuntu-lastest
+    run-on: ubuntu-latest
 
     env:
       SSHPASS: ${{ secret.APP_PASS }}
