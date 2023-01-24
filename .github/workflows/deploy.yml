@@ -1,5 +1,4 @@
 name: Deploy
- 
 on:
   push:
     branches: [master]
@@ -26,6 +25,7 @@ jobs:
     #     - name: Copy repository contents via scp
     #   uses: appleboy/scp-action@master
     #   env:
+    
     #     HOST: ${{ secrets.HOST }}
     #     USERNAME: ${{ secrets.USERNAME }}
     #     PORT: ${{ secrets.PORT }}
@@ -41,5 +41,5 @@ jobs:
     #     USERNAME: ${{ secrets.USERNAME }}
     #     PORT: ${{ secrets.PORT }}
     #     KEY: ${{ secrets.SSHKEY }}
-    
+
     #     script: ls
