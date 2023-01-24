@@ -18,7 +18,7 @@ jobs:
         HOST: ${{ secrets.APP_HOST }}
         USERNAME: ${{ secrets.APP_SECRET }}
         PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+        KEY: ${{ secrets.SSHSECRET }}
       with:
         source: "."
         target: "web/les-pros-de-la-com.jamdev.tech/public_html"
@@ -29,5 +29,5 @@ jobs:
         host: ${{ secrets.APP_HOST }}
         USERNAME: ${{ secrets.APP_USER }}
         PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+        KEY: ${{ secrets.SSHSECRET }}
         script: ls
