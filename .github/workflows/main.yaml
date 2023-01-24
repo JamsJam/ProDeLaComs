@@ -17,7 +17,7 @@ jobs:
         run:
           sudo apt update && sudo apt install sshpass
       
-      - name: JamUser1
+      - name: deploy
         run:
           sshpass -e ssh -o stricthostkeychecking=no ${{ secrets.APP_USER }}@${{ secrets.APP_HOST }}
           "cd web/les-pros-de-la-com.jamdev.tech/public_html/ && git pull && /usr/bin/php8.1 /usr/local/bin/composer install && php8.1 bin/console d:m:m -n" 
