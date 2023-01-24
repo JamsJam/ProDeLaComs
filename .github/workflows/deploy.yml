@@ -30,4 +30,4 @@ jobs:
         USERNAME: ${{ secrets.APP_USER }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHSECRET }}
-        script: ls
+#         script: ls
