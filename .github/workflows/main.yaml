@@ -24,3 +24,4 @@ jobs:
           git pull &&
           /usr/bin/php8.1 /usr/local/bin/composer install &&
           php8.1 bin/console d:m:m -n"
+# test
