@@ -66,6 +66,9 @@ class Membre implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'new', targetEntity: RegisterLogs::class)]
     private Collection $addLog;
 
+    #[ORM\OneToOne(inversedBy: 'membre', cascade: ['persist', 'remove'])]
+    private ?Option $options = null;
+
     public function __construct()
     {
         $this->mails = new ArrayCollection();
@@ -339,6 +342,18 @@ class Membre implements UserInterface, PasswordAuthenticatedUserInterface
                 $addLog->setNew(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getOptions(): ?Option
+    {
+        return $this->options;
+    }
+
+    public function setOptions(?Option $options): self
+    {
+        $this->options = $options;
 
         return $this;
     }
