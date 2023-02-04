@@ -1,0 +1,28 @@
+@use "../abstract" as *;
+
+.landing{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/public/images/landingImg.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @extend %flex-column-around-center;
+
+    p{
+        width: clamp(70vw, 600px, 100vw);
+        text-align: center;
+        padding-inline: 1rem;
+    }
+
+    &__boutons{
+        @extend %flex-row-center;
+        gap:3rem;
+        flex-wrap: wrap;
+        flex-wrap: -webkit-wrap;
+    }
+}
