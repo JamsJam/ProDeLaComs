@@ -9,8 +9,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
+    
     #[Route('/', name: 'app_front_home')]
-    public function index(Request $request): Response
+    public function index(): Response
+    {
+
+        return $this->render('front/home/index.html.twig', [
+            
+        ]);
+    }
+
+    /**
+     * Function menant a l'index du crud Membre
+     */
+    #[Route('/accueil', name: 'app_front_accueil')]
+    public function accueil(): Response
     {
 
         return $this->render('front/home/index.html.twig', [

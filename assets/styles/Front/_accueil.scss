@@ -1,0 +1,44 @@
+@use "../abstract" as *;
+
+.card{
+
+    border: aqua 2px solid;
+    box-shadow: 3px 3px 12px -3px black;
+    padding: 1rem;
+
+
+    &__gridContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: 3rem;
+        padding-inline: 2rem;
+        justify-content: center;
+        width: 90vw;
+        margin-inline: auto;
+    }
+
+    &__part1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__identite {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100px;
+    }
+
+    &__poste {
+        text-align: center;
+        margin-block: 1rem;
+    }
+
+    &__bouton {
+        width: fit-content;
+        margin-inline: auto;
+        margin-block: 0.5rem;
+    }
+}

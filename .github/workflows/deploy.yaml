@@ -1,19 +1,28 @@
-name: Deploy
+# write a coutinuous delivery code that trigger when a push is made to the master branch
+# and deploy the code to the server
+# name: Deploy to server
 
-on: 
-  push:
-    branches: [master]
+# on:
+#   push:
+#     branches:
+#       - master
 
-jobs:
-  super-linter:
-    name: deploy jobs
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Deploy to server
+#         uses: appleboy/scp-action@master
+#         with:
+#           host: ${{ secrets.HOST }}
+#           username: ${{ secrets.USERNAME }}
+#           key: ${{ secrets.KEY }}
+#           port: ${{ secrets.PORT }}
+#           source: "./"
+#           target: "/var/www/html"
 
-      - name: Run Linter
-        uses: github/super-linter@v3
-        env: 
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+# Path: .github\workflows\deploy.yaml
+
+
+

@@ -19,7 +19,7 @@ class Option
     private ?int $affnommarque = null;
 
     #[ORM\Column(type: Types::SMALLINT)]
-    private ?int $mailnomparque = null;
+    private ?int $mailnommarque = null;
 
     #[ORM\Column]
     private ?bool $mailtelephone = null;
@@ -44,14 +44,14 @@ class Option
         return $this;
     }
 
-    public function getMailnomparque(): ?int
+    public function getMailnommarque(): ?int
     {
-        return $this->mailnomparque;
+        return $this->mailnommarque;
     }
 
-    public function setMailnomparque(int $mailnomparque): self
+    public function setMailnommarque(int $mailnommarque): self
     {
-        $this->mailnomparque = $mailnomparque;
+        $this->mailnommarque = $mailnommarque;
 
         return $this;
     }

@@ -11,12 +11,25 @@
     top: 0;
     left: 0;
 
-    @extend %flex-column-around-center;
+    
+    
+    &__overlay{
+        height: 100vh;
+        width: 100vw;
+        background-color: #00000066;
+        backdrop-filter: blur(2px);
+        @extend %flex-column-around-center;
+    }
+
+    h1{
+        color: $primary-25;
+    }
 
     p{
         width: clamp(70vw, 600px, 100vw);
         text-align: center;
         padding-inline: 1rem;
+        color: $secondary-95;
     }
 
     &__boutons{

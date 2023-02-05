@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Membre index{% endblock %}
+
+{% block body %}
+    <h1 class="titre titre-32">Membre index</h1>
+
+    <section class="card__gridContainer">
+
+        {% for membre in membres %}                    
+        
+        {% set option = membre.options.affnommarque %}
+                <div class="card">
+
+                    <div class="card__part1">
+
+                        <img src="{{asset("images/" ~ membre.image)}}" height="100px" alt="Photo de profil">
+
+
+
+                        <div class="card__identite">
+                            
+                            {% if option == 0 or option == 2 %}
+
+                                <div class="identite__nom">
+                                
+                                    <p>
+                                        {{ membre.nom }}
+                                    </p>
+                                
+                                </div>
+                                
+                                <div class="identite__prenom">
+                                
+                                    <p>
+                                        {{ membre.prenom }}
+                                    </p>
+                                
+                                </div>
+
+                            {% endif %}
+
+                            {% if option == 1 or option == 2 %}
+                                <div class="identite__marque">
+                                
+                                    <p>
+                                        {{ membre.marque }}
+                                    </p>
+                                
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                    <div class="card__poste">
+                        
+                        <p>
+                            {{ membre.poste }}
+                        </p>
+
+                    </div>
+                    <div class="card__bouton">
+
+                        <a href="{{ path('app_back_membre_membre_show', {'id': membre.id}) }}" class="bouton bouton--secondary">Détails</a>
+
+                    </div>
+                </div>
+            
+        {% else %}
+            
+                <td colspan="15">no records found</td>
+
+        {% endfor %}
+
+
+    </section>
+    <a href="{{ path('app_back_membre_membre_new') }}">Create new</a>
+{% endblock %}
