@@ -19,15 +19,4 @@ class HomeController extends AbstractController
         ]);
     }
 
-    /**
-     * Function menant a l'index du crud Membre
-     */
-    #[Route('/accueil', name: 'app_front_accueil')]
-    public function accueil(): Response
-    {
-
-        return $this->render('front/home/index.html.twig', [
-            
-        ]);
-    }
 }

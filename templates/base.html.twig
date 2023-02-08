@@ -4,18 +4,54 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="{{asset("build/app.css")}}">
+
         <title>{% block title %}Les pros du web | {% endblock %}</title>
     </head>
     <body>
         
-        <header></header>
+        <header class="header">
+
+        <div class="header__logo"><a href="{{path("app_accueil")}}" >Logo here</a></div>
+
+
+        <div class="header__bouton">
+
+            {% if not app.user %}
+                {#? bouton access aux membre (accueil)  #}
+                    <a href="" {{ not app.request.pathinfo == "app_accueil" ? 'class="bouton bouton--secondary"'}}>Membres</a>
+                    
+                
+                {#? bouton acces login  #}
+                    <a href="#" class="bouton bouton--secondary">Connexion</a>
+                
+            {% else %}
+                
+                <a href="#">Espace user</a>
+
+                <a href="#" class="bouton bouton--secondary">Déconnexion</a>
+                
+            {% endif %}
+            
+
+        </div>
+        
+
+
+
+
+        </header>
         
         <main>
             {% block body %}{% endblock %}
         </main>
         
-        <footer></footer>
+        <footer>
+            {# todo
+                faire un footer
+             #}
+        </footer>
 
     </body>
     <script src="{{asset("build/app.js")}}"></script>

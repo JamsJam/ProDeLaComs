@@ -3,14 +3,24 @@
 {% block title %}Membre index{% endblock %}
 
 {% block body %}
-    <h1 class="titre titre-32">Membre index</h1>
+    <h1 class="titre titre--32">Membre index</h1>
+    
 
-    <section class="card__gridContainer">
+    <section class="accueil__recherche">
+        <form method="post" id='accueil__form' name="form">
+            <button type="submit" id='accueil__form__submit'>Send</button>
+            <input type="text" name="search" id="search" class="input__text input--empty" placeholder="recherche...">
+            <a href="#" id='resetSearch2'>reset</a>
+            <input type="hidden" name="_token" id="token" value="{{ csrf_token('fetchUser') }}">
+            
+        </form>
+    </section>
+    <section class="card__gridContainer" id='cardContainer'>
 
         {% for membre in membres %}                    
         
         {% set option = membre.options.affnommarque %}
-                <div class="card">
+                <div class="card" id='{{membre.id}}'>
 
                     <div class="card__part1">
 
@@ -75,5 +85,40 @@
 
 
     </section>
-    <a href="{{ path('app_back_membre_membre_new') }}">Create new</a>
+    {% if is_granted('admin') %}
+        
+        <a href="{{ path('app_back_membre_membre_new') }}">Ajouter un membre</a>
+    {% endif %} 
+    
+
+{% endblock %}
+{% block script %}
+    <script>
+
+        // ----  Variable
+            let accueilForm = document.querySelector('#accueil__form');
+            let accueilFormSubmit = document.querySelector('#accueil__form__submit');
+            let urlTarget = window.location.origin+'{{path('api_fetch_user')}}';
+            let cards = document.querySelectorAll('.card')
+            let cardContainer = document.querySelector('#cardContainer')
+            let main = document.querySelector("main")
+            let noResult
+
+
+
+
+        // ---- Evenements
+            document.querySelector('#resetSearch2').addEventListener("click",(e)=>{
+                e.preventDefault;
+                resetSearch(cards,cardContainer)
+            })
+                
+            accueilForm.addEventListener("submit",(e)=>{
+                e.preventDefault();
+                // console.log(new FormData(accueilForm) )
+                fetchUser(accueilForm, urlTarget, cards, cardContainer)
+            })
+        
+
+    </script>
 {% endblock %}

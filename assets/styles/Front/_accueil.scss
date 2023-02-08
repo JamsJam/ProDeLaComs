@@ -1,12 +1,61 @@
 @use "../abstract" as *;
 
+
+.accueil__recherche{
+    margin-block: 3rem;
+
+    form{
+        @extend %flex-row-center;
+        // gap:1rem;
+
+        &::placeholder{
+            text-align: center;
+        }
+
+        input{
+            background-color: $primary-95;
+        }
+
+        button{
+            @extend %flex-row-center;
+            
+            height: 3rem;
+            width: 5rem;
+            
+            border: none;
+            background-color: hsla(255deg, 82%, 45%,0.8);
+            color: $neutral-95;
+            
+            cursor: pointer;
+            
+            &:hover{
+                background-color: $primary-45;
+
+            }
+        }
+
+    }
+}
+
+//? grid contenant les cartes
+
 .card{
 
-    border: aqua 2px solid;
+    border: $primary-35 2px solid;
     box-shadow: 3px 3px 12px -3px black;
     padding: 1rem;
+    transition: transform 200ms ease-in-out, background-color 200ms ease-in-out;
+    background-color: white;
 
 
+    &:hover{
+        transform: translateY(-0.5rem);
+        transform: scale(105%);
+        background-color: $neutral-95;
+        
+    }
+
+    
     &__gridContainer {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -17,28 +66,35 @@
         margin-inline: auto;
     }
 
+
+    //? premiere partie ( nom prenom image)
     &__part1 {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
+
+        @extend %flex-row-around-center;
     }
 
+    //? nom prenom
     &__identite {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-around;
+        @extend %flex-column-around-center;
         height: 100px;
     }
 
+    //? 2e partie (le poste)
     &__poste {
         text-align: center;
         margin-block: 1rem;
     }
 
+    //? 3e partie bouton "details"
     &__bouton {
         width: fit-content;
         margin-inline: auto;
         margin-block: 0.5rem;
+
     }
+
+
 }

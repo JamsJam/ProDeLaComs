@@ -56,6 +56,33 @@ class MembreRepository extends ServiceEntityRepository implements PasswordUpgrad
         $this->save($user, true);
     }
 
+   /**
+    * Returns an array that contains member ids
+    * 
+    * @param string $value 
+    */
+    public function rechercheMembre(string $value): array {
+        
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT m.id FROM membre as m 
+            WHERE   m.nom LIKE :value
+                OR  m.prenom LIKE :value
+                OR  m.marque LIKE :value
+                OR  m.poste LIKE :value
+        ';
+
+        $stmt = $conn->prepare($sql);
+        $result = $stmt->executeQuery(['value' => '%'.$value.'%']);
+
+    return $result->fetchAllAssociative();
+    
+        
+    
+    }
+
+
 //    /**
 //     * @return Membre[] Returns an array of Membre objects
 //     */

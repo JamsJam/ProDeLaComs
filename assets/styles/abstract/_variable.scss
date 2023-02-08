@@ -117,16 +117,24 @@
     
     //! Size-title
     
+        //? 32px - 64px
         $title-size-1 : clamp(2rem, 1.4737rem + 2.807vw, 4rem);;
+        //? 40px - 48px
         $title-size-2 : clamp(2.5rem, 2.4rem + 0.5333vw, 3rem);
+        //? 24px - 32px
         $title-size-3 : clamp(1.5rem, 1.1795rem + 1.7094vw, 2rem);
+        //? 20px - 24px
         $title-size-4 : clamp(1.25rem, 0.5rem + 1.5625vw, 1.5rem);;
-    
+        
     //! Size-texte
-    
+        
+        //? 18px - 24px
         $text-size-1 : clamp(1.2rem, 1.1211rem + 0.4211vw, 1.5rem);;
+        //? 20px
         $text-size-2 : 1.25rem;
+        //? 16px
         $text-size-3 : 1rem;
+        //? 14px
         $text-size-4 : 0.875rem;
     
 
