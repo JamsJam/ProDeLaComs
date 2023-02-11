@@ -50,7 +50,7 @@ jobs:
             cd web/les-pros-de-la-com.jamdev.tech/public_html/
             git pull
             /usr/bin/php8.1 /usr/local/bin/composer install
-            php8.1 bin/console d:m:m -n
+            php8.1 bin/console d:m:m -y
             
 
 
