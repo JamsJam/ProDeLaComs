@@ -1,0 +1,56 @@
+#! ----- Code  1
+
+
+#   name: CD
+# on:
+#   push:
+#     branches: [master]
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+
+#     env:
+#       SSHPASS: ${{ secrets.APP_SECRET }}
+
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: APT UPDATE and INSTALL SSHPASS
+#         run:
+#           sudo apt update && sudo apt install sshpass
+      
+#       - name: test pwd
+#         run:
+#           sshpass -e ssh -o stricthostkeychecking=no ${{ secrets.APP_USER }}@${{ secrets.APP_HOST }}
+#           "cd web/les-pros-de-la-com.jamdev.tech/public_html/ &&
+#           git pull &&
+#           /usr/bin/php8.1 /usr/local/bin/composer install &&
+#           php8.1 bin/console d:m:m -n"
+
+#! ----- Code  2
+
+name: deploy-prod
+on:
+  push:
+    branches:
+      - testCI
+jobs:
+  deploy-alkatraz:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Prod
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_SERVER }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd web/les-pros-de-la-com.jamdev.tech/public_html/
+            git pull
+            /usr/bin/php8.1 /usr/local/bin/composer install
+            php8.1 bin/console d:m:m -n
+            
+
+
