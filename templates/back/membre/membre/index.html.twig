@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Membre index{% endblock %}
+
+{% block body %}
+    <h1 class="titre titre--32">Membre index</h1>
+    
+
+    <section class="accueil__recherche">
+        <form method="post" id='accueil__form' name="form">
+            <button type="submit" id='accueil__form__submit'>Send</button>
+            <input type="text" name="search" id="search" class="input__text input--empty" placeholder="recherche...">
+            <a href="#" id='resetSearch2'>reset</a>
+            <input type="hidden" name="_token" id="token" value="{{ csrf_token('fetchUser') }}">
+            
+        </form>
+    </section>
+    <section class="card__gridContainer" id='cardContainer'>
+
+        {% for membre in membres %}                    
+        
+        {% set option = membre.options.affnommarque %}
+                <div class="card" id='{{membre.id}}'>
+
+                    <div class="card__part1">
+
+                        <img src="{{asset("images/" ~ membre.image)}}" height="100px" alt="Photo de profil">
+
+
+
+                        <div class="card__identite">
+                            
+                            {% if option == 0 or option == 2 %}
+
+                                <div class="identite__nom">
+                                
+                                    <p>
+                                        {{ membre.nom }}
+                                    </p>
+                                
+                                </div>
+                                
+                                <div class="identite__prenom">
+                                
+                                    <p>
+                                        {{ membre.prenom }}
+                                    </p>
+                                
+                                </div>
+
+                            {% endif %}
+
+                            {% if option == 1 or option == 2 %}
+                                <div class="identite__marque">
+                                
+                                    <p>
+                                        {{ membre.marque }}
+                                    </p>
+                                
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                    <div class="card__poste">
+                        
+                        <p>
+                            {{ membre.poste }}
+                        </p>
+
+                    </div>
+                    <div class="card__bouton">
+
+                        <a href="{{ path('app_back_membre_membre_show', {'id': membre.id}) }}" class="bouton bouton--secondary">Détails</a>
+
+                    </div>
+                </div>
+            
+        {% else %}
+            
+                <td colspan="15">no records found</td>
+
+        {% endfor %}
+
+
+    </section>
+    {% if is_granted('admin') %}
+        
+        <a href="{{ path('app_back_membre_membre_new') }}">Ajouter un membre</a>
+    {% endif %} 
+    
+
+{% endblock %}
+{% block script %}
+    <script>
+
+        // ----  Variable
+            let accueilForm = document.querySelector('#accueil__form');
+            let accueilFormSubmit = document.querySelector('#accueil__form__submit');
+            let urlTarget = window.location.origin+'{{path('api_fetch_user')}}';
+            let cards = document.querySelectorAll('.card')
+            let cardContainer = document.querySelector('#cardContainer')
+            let main = document.querySelector("main")
+            let noResult
+
+
+
+
+        // ---- Evenements
+            document.querySelector('#resetSearch2').addEventListener("click",(e)=>{
+                e.preventDefault;
+                resetSearch(cards,cardContainer)
+            })
+                
+            accueilForm.addEventListener("submit",(e)=>{
+                e.preventDefault();
+                // console.log(new FormData(accueilForm) )
+                fetchUser(accueilForm, urlTarget, cards, cardContainer)
+            })
+        
+
+    </script>
+{% endblock %}

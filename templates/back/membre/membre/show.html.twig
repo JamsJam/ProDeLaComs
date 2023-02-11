@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Membre{% endblock %}
+
+{% block body %}
+    <h1>Membre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ membre.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ membre.email }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ membre.roles ? membre.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ membre.password }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ membre.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ membre.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ membre.marque }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ membre.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Site</th>
+                <td>{{ membre.site ? membre.site|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Poste</th>
+                <td>{{ membre.poste }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ membre.description }}</td>
+            </tr>
+            <tr>
+                <th>Competence</th>
+                <td>{{ membre.competence ? membre.competence|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ membre.image }}</td>
+            </tr>
+            <tr>
+                <th>IsVerified</th>
+                <td>{{ membre.isVerified ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_membre_membre_index') }}">back to list</a>
+
+    <a href="{{ path('app_back_membre_membre_edit', {'id': membre.id}) }}">edit</a>
+
+    {{ include('back/membre/membre/_delete_form.html.twig') }}
+{% endblock %}
