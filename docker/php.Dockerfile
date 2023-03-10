@@ -26,15 +26,6 @@ RUN touch ~/.bashrc && chmod +x ~/.bashrc
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 RUN . ~/.nvm/nvm.sh && source ~/.bashrc && nvm install 18.15.0
 
-# RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | sh \
-#     && . $NVM_DIR/nvm.sh \
-#     && nvm install $NODE_VERSION \
-#     && nvm alias default $NODE_VERSION \
-#     && nvm use default
-
-# RUN nvm install --lst
-# RUN sh -l -c "source /root/.bashrc"
-
 #install curl
 RUN apt-get update && \
     apt-get install curl -y
