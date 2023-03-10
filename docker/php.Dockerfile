@@ -44,4 +44,6 @@ RUN yarn add encore
 #Generate assets files
 RUN sh -l -c yarn build
 
+RUN php bin/console d:s:u
+
 # RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.19
