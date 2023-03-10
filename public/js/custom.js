@@ -71,7 +71,7 @@
         }
     }
 
-    //*document this function
+
 
     /**
      * 
@@ -83,7 +83,7 @@
      * Envoie les données du formulaire de recherche en ajax et affiche les elements correspondant a la recherche
      * 
      */
-    async function fetchUser(form,link,elements, container) {
+    async function fetchUser(form,link,elements,container) {
         const formData = new FormData(form)
         const response = await fetch(
             link, { 

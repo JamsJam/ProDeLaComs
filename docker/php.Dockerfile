@@ -3,12 +3,13 @@
 
 FROM php:8.1-fpm
 
+WORKDIR /var/www/html
+
 RUN apt-get update && \
     apt-get install -y nano vim tree git libzip-dev zip gnupg && \
     docker-php-ext-configure zip && \
     docker-php-ext-install zip && \
     docker-php-ext-install pdo_mysql && \
-    docker-php-ext-install php_pdo_mysql && \
     docker-php-ext-install mysqli && \
     docker-php-ext-install bcmath && \
     pecl install xdebug && \
@@ -26,15 +27,6 @@ RUN touch ~/.bashrc && chmod +x ~/.bashrc
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 RUN . ~/.nvm/nvm.sh && source ~/.bashrc && nvm install 18.15.0
 
-# RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | sh \
-#     && . $NVM_DIR/nvm.sh \
-#     && nvm install $NODE_VERSION \
-#     && nvm alias default $NODE_VERSION \
-#     && nvm use default
-
-# RUN nvm install --lst
-# RUN sh -l -c "source /root/.bashrc"
-
 #install curl
 RUN apt-get update && \
     apt-get install curl -y
@@ -44,7 +36,6 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo 'deb https://dl.yarnpkg.com/debian/ stable main' | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update -y && apt-get install yarn -y
 
-WORKDIR /var/www/html
 RUN yarn install
 
 #Add encore for package.json's scripts key requirements
@@ -52,5 +43,6 @@ RUN yarn add encore
 
 #Generate assets files
 RUN sh -l -c yarn build
+
 
 # RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.19
