@@ -97,6 +97,7 @@ class MembreController extends AbstractController
         //? if  request not is an AJAX request or token invalid
             if (! $request->isXmlHttpRequest() || ! $this->isCsrfTokenValid('fetchUser', $submittedToken)) {
 
+                
                 return new Response(null, 403);
             }
         
