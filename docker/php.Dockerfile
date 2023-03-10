@@ -3,6 +3,8 @@
 
 FROM php:8.1-fpm
 
+WORKDIR /var/www/html
+
 RUN apt-get update && \
     apt-get install -y nano vim tree git libzip-dev zip gnupg && \
     docker-php-ext-configure zip && \
@@ -34,7 +36,6 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo 'deb https://dl.yarnpkg.com/debian/ stable main' | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update -y && apt-get install yarn -y
 
-WORKDIR /var/www/html
 RUN yarn install
 
 #Add encore for package.json's scripts key requirements
@@ -43,6 +44,5 @@ RUN yarn add encore
 #Generate assets files
 RUN sh -l -c yarn build
 
-RUN sh -l -c php bin/console d:s:u --force
 
 # RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.19
