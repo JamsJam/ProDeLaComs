@@ -8,7 +8,6 @@ RUN apt-get update && \
     docker-php-ext-configure zip && \
     docker-php-ext-install zip && \
     docker-php-ext-install pdo_mysql && \
-    docker-php-ext-install php_pdo_mysql && \
     docker-php-ext-install mysqli && \
     docker-php-ext-install bcmath && \
     pecl install xdebug && \
